@@ -5,6 +5,7 @@ This is cloned rqlite with all dependencies, ready to build where go get is not 
 #4/7/2018:
 ```bash
 
+#NOTE the /... at the end - otherwise no dependencies will be downloaded !
 [ec2-user@ip-172-31-38-111 dev]$ go get -v github.com/rqlite/rqlite/...
 [ec2-user@ip-172-31-38-111 dev]$ ll rqlite
 drwxrwxr-x 2 ec2-user ec2-user 4096 Apr  7 21:32 bin
