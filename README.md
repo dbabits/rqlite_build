@@ -34,7 +34,7 @@ cp $WORK/command-line-arguments/_obj/exe/a.out bin_dynamic/rqlited
 
 [ec2-user@ip-172-31-38-111 rqlite]$ GOPATH=$PWD  go build -a -v -x  -o bin_dynamic/rqbench src/github.com/rqlite/rqlite/cmd/rqbench/*.go
 cp $WORK/command-line-arguments/_obj/exe/a.out bin_dynamic/rqbench
-[ec2-user@ip-172-31-38-111 rqlite]$ ldd bin/*
+[ec2-user@ip-172-31-38-111 rqlite]$ ldd bin_dynamic/*
 
 #static compilation:
 [ec2-user@ip-172-31-38-111 rqlite]$ GOPATH=$PWD  CGO_ENABLED=0 go build -a -v -x  -o bin_static/rqlite  src/github.com/rqlite/rqlite/cmd/rqlite/*.go
