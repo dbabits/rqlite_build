@@ -26,20 +26,20 @@ total 20
 -rw-rw-r-- 1 ec2-user ec2-user 2220 Apr  7 21:31 query.go
 -rw-rw-r-- 1 ec2-user ec2-user 1257 Apr  7 21:31 README.md
 
-[ec2-user@ip-172-31-38-111 rqlite]$ go build -a -v -x  -o bin_dynamic/rqlite  src/github.com/rqlite/rqlite/cmd/rqlite/*.go  #this is the right way:
+[ec2-user@ip-172-31-38-111 rqlite]$ GOPATH=$PWD go build -a -v -x  -o bin_dynamic/rqlite  src/github.com/rqlite/rqlite/cmd/rqlite/*.go  #this is the right way:
 cp $WORK/command-line-arguments/_obj/exe/a.out bin_dynamic/rqlite
 
-[ec2-user@ip-172-31-38-111 rqlite]$ go build -a -v -x  -o bin_dynamic/rqlited src/github.com/rqlite/rqlite/cmd/rqlited/*.go
+[ec2-user@ip-172-31-38-111 rqlite]$ GOPATH=$PWD  go build -a -v -x  -o bin_dynamic/rqlited src/github.com/rqlite/rqlite/cmd/rqlited/*.go
 cp $WORK/command-line-arguments/_obj/exe/a.out bin_dynamic/rqlited
 
-[ec2-user@ip-172-31-38-111 rqlite]$ go build -a -v -x  -o bin_dynamic/rqbench src/github.com/rqlite/rqlite/cmd/rqbench/*.go
+[ec2-user@ip-172-31-38-111 rqlite]$ GOPATH=$PWD  go build -a -v -x  -o bin_dynamic/rqbench src/github.com/rqlite/rqlite/cmd/rqbench/*.go
 cp $WORK/command-line-arguments/_obj/exe/a.out bin_dynamic/rqbench
 [ec2-user@ip-172-31-38-111 rqlite]$ ldd bin/*
 
 #static compilation:
-[ec2-user@ip-172-31-38-111 rqlite]$ CGO_ENABLED=0 go build -a -v -x  -o bin_static/rqlite  src/github.com/rqlite/rqlite/cmd/rqlite/*.go
-[ec2-user@ip-172-31-38-111 rqlite]$ CGO_ENABLED=0 go build -a -v -x  -o bin_static/rqlited src/github.com/rqlite/rqlite/cmd/rqlited/*.go #this does not produce the binary!
-[ec2-user@ip-172-31-38-111 rqlite]$ CGO_ENABLED=0 go build -a -v -x  -o bin_static/rqbench src/github.com/rqlite/rqlite/cmd/rqbench/*.go
+[ec2-user@ip-172-31-38-111 rqlite]$ GOPATH=$PWD  CGO_ENABLED=0 go build -a -v -x  -o bin_static/rqlite  src/github.com/rqlite/rqlite/cmd/rqlite/*.go
+[ec2-user@ip-172-31-38-111 rqlite]$ GOPATH=$PWD  CGO_ENABLED=0 go build -a -v -x  -o bin_static/rqlited src/github.com/rqlite/rqlite/cmd/rqlited/*.go #this does not produce the binary!
+[ec2-user@ip-172-31-38-111 rqlite]$ GOPATH=$PWD  CGO_ENABLED=0 go build -a -v -x  -o bin_static/rqbench src/github.com/rqlite/rqlite/cmd/rqbench/*.go
 [ec2-user@ip-172-31-38-111 rqlite]$ ldd bin_static/*
 bin_static/rqbench:
         not a dynamic executable
