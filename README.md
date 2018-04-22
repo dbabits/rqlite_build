@@ -54,6 +54,7 @@ bin_static/rqlite:
 [ec2-user@ip-172-31-38-111 rqlite]$ find src -type f |xargs git add -v 		
 ...
 
-
+#on the other side:
+curll https://github.com/dbabits/rqlite_build/archive/master.zip > rqlite.zip
 
 ```
