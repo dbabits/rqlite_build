@@ -51,8 +51,18 @@ bin_static/rqlite:
 [ec2-user@ip-172-31-38-111 rqlite]$ find src -type d -name .git -ls -exec rm -rf {} \;
 [ec2-user@ip-172-31-38-111 rqlite]$ git init; git remote add github  https://github.com/dbabits/rqlite_build;
 [ec2-user@ip-172-31-38-111 rqlite]$ find src -type f |xargs git add -v -n #dry run
-[ec2-user@ip-172-31-38-111 rqlite]$ find src -type f |xargs git add -v 		
+[ec2-user@ip-172-31-38-111 rqlite]$ find src -type f |xargs git add -v ; git commit; 		
 ...
+#Gron(same thing) https://github.com/dbabits/gron_build:
+[ec2-user@ip-172-31-38-111 gron]$ git pull github master --allow-unrelated-histories
+From https://github.com/dbabits/gron_build
+ * branch            master     -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+[ec2-user@ip-172-31-38-111 gron]$ git push github master
+   99d2a53..4fc0552  master -> master
 
 #on the other side:
 curll https://github.com/dbabits/rqlite_build/archive/master.zip > rqlite.zip
