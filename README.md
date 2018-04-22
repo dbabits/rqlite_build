@@ -47,8 +47,13 @@ bin_static/rqbench:
 bin_static/rqlite:
         not a dynamic executable
 
+#remove references to the current github repo, we are going to commit to another one
 [ec2-user@ip-172-31-38-111 rqlite]$ find src -type d -name .git -ls -exec rm -rf {} \;
-[ec2-user@ip-172-31-38-111 rqlite]$ find src -type f |xargs git add -v -n
+[ec2-user@ip-172-31-38-111 rqlite]$ git init; git remote add github  https://github.com/dbabits/rqlite_build;
+[ec2-user@ip-172-31-38-111 rqlite]$ find src -type f |xargs git add -v -n #dry run
 [ec2-user@ip-172-31-38-111 rqlite]$ find src -type f |xargs git add -v 		
+...
+
+
 
 ```
